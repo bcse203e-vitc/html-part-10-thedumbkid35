@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive To-Do List</title>
+    <style>
+        #todo-list {
+            list-style-type: none;
+        }
+        .todo-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 0;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            const addButton = document.getElementById("add");
+            const inputField = document.getElementById("todo-input");
+            const todoList = document.getElementById("todo-list");
+
+            
+            addButton.addEventListener("click", function() {
+                if (inputField.value !== "") {
+                    const newItem = document.createElement("li");
+                    newItem.classList.add("todo-item");
+
+                    const text = document.createElement("span");
+                    text.textContent = inputField.value;
+                    newItem.appendChild(text);
+
+                    const removeButton = document.createElement("button");
+                    removeButton.textContent = "Remove";
+                    removeButton.addEventListener("click", function() {
+                        newItem.remove();
+                    });
+                    newItem.appendChild(removeButton);
+
+                    todoList.appendChild(newItem);
+
+                    inputField.value = ""; 
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Interactive To-Do List</h2>
+
+    <input type="text" id="todo-input" placeholder="Add a new task">
+    <button id="add">Add</button>
+
+    <ul id="todo-list">
+        
+    </ul>
+
+</body>
+</html>

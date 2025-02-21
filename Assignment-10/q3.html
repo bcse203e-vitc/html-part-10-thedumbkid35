@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Order</title>
+    <script src="pizza.js" defer></script>
+</head>
+<body>
+    <form id="pizzaForm">
+        <fieldset>
+        <legend>Choose Size</legend>
+        <input type="radio" name="size" value="Small">Small
+        <input type="radio" name="size" value="Medium">Medium
+        <input type="radio" name="size" value="Large">Large
+    </fieldset>
+
+    <fieldset>
+        <legend>Choose Toppings</legend>
+        <input type="checkbox" value="Cheese">Cheese
+        <input type="checkbox" value="Pepperoni">Pepperoni
+        <input type="checkbox" value="Mushrooms">Mushrooms
+        <input type="checkbox" value="Olives">Olives
+    </fieldset>
+
+    <button type="button" onclick="submitOrder()">Submit</button>
+    </form>
+    <p id="orderSummary"></p>
+</body>
+</html>

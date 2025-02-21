@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game Using While loop</title>
+    <script>
+        let secretNumber = Math.floor(Math.random()*50)+1;
+        let guess = prompt("Guess a number between 1 and 50: ");
+        while(parseInt(guess) !== secretNumber){
+            guess = prompt("Wrong! Try again: ");
+        }
+        alert("Congratulations! You guessed the correct number.");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

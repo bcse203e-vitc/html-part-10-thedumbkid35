@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country-State Dropdown</title>
+    <script>
+        function updateStates() {
+            var country = document.getElementById("country").value;
+            var stateDropdown = document.getElementById("state");
+            var states = [];
+
+            if (country === "USA") {
+                states = ["California", "Texas", "New York"];
+            } else if (country === "India") {
+                states = ["Delhi", "Karnataka", "Maharashtra"];
+            } else if (country === "UK") {
+                states = ["England", "Scotland", "Wales"];
+            }
+
+            
+            stateDropdown.innerHTML = "";
+
+            
+            states.forEach(function(state) {
+                var option = document.createElement("option");
+                option.value = state;
+                option.textContent = state;
+                stateDropdown.appendChild(option);
+            });
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Select Country and State</h2>
+
+    <label for="country">Country:</label>
+    <select id="country" onchange="updateStates()">
+        <option value="USA">USA</option>
+        <option value="India">India</option>
+        <option value="UK">UK</option>
+    </select>
+
+    <br><br>
+
+    <label for="state">State:</label>
+    <select id="state">
+        
+    </select>
+
+</body>
+</html>
